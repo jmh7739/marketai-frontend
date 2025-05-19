@@ -1,0 +1,244 @@
+/* marketai-frontend/src/pages/ProductCreate.css */
+.product-create-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.error-alert {
+  background-color: #ffebee;
+  color: #f44336;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.form-section {
+  padding: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.section-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.image-upload-container {
+  margin-bottom: 15px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.image-upload-box {
+  height: 140px;
+  border: 2px dashed #ddd;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  color: #666;
+}
+
+.image-upload-box:hover {
+  border-color: #2196f3;
+  color: #2196f3;
+}
+
+.upload-icon {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.image-preview-container {
+  position: relative;
+  height: 140px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-image-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.image-preview-container:hover .remove-image-button {
+  opacity: 1;
+}
+
+.main-image-badge {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: #2196f3;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.analyze-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.analyze-button:hover {
+  background-color: #388e3c;
+}
+
+.analyze-button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+  border-color: #2196f3;
+  outline: none;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  padding: 25px;
+  justify-content: flex-end;
+}
+
+.cancel-button {
+  padding: 12px 24px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+.submit-button {
+  padding: 12px 24px;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #1976d2;
+}
+
+.submit-button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-button,
+  .submit-button {
+    width: 100%;
+  }
+}

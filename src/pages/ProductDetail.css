@@ -1,0 +1,822 @@
+/* src/pages/ProductDetail.css */
+.product-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* 상품 이미지 영역 */
+.product-images {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-image-container {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thumbnail-gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail.active {
+  border-color: #2196f3;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 상품 정보 영역 */
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-header {
+  margin-bottom: 20px;
+}
+
+.product-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  color: white;
+}
+
+.badge.auction {
+  background-color: #2196f3;
+}
+
+.badge.buy-now {
+  background-color: #4caf50;
+}
+
+.badge.condition {
+  background-color: #9e9e9e;
+}
+
+.badge.condition.new {
+  background-color: #9c27b0;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.product-meta {
+  display: flex;
+  gap: 15px;
+  color: #666;
+  font-size: 13px;
+}
+
+/* 경매 정보 영역 */
+.product-auction-info {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auction-status {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.price-container, .time-container {
+  flex: 1;
+}
+
+.current-price-label, .time-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.current-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2196f3;
+  margin-bottom: 5px;
+}
+
+.bid-count {
+  font-size: 14px;
+  color: #666;
+}
+
+.time-left {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.end-date {
+  font-size: 14px;
+  color: #666;
+}
+
+.bid-container {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bid-input-container {
+  margin-bottom: 15px;
+}
+
+.bid-input-container label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.input-with-currency {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+.bid-input-container input {
+  width: 100%;
+  padding: 12px 15px 12px 35px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.bid-input-container input.error {
+  border-color: #f44336;
+}
+
+.bid-error {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.bid-hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}.bid-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.bid-button:hover {
+  background-color: #1976d2;
+}
+
+.buy-now-container {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.buy-now-price {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.buy-now-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.buy-now-button:hover {
+  background-color: #388e3c;
+}
+
+.watch-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.watch-button:hover {
+  background-color: #e0e0e0;
+}
+
+.watch-button.watching {
+  background-color: #e3f2fd;
+  color: #2196f3;
+  border-color: #bbdefb;
+}
+
+/* 판매자 정보 요약 */
+.seller-summary {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seller-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.seller-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.seller-info {
+  flex: 1;
+}
+
+.seller-name {
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.seller-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.rating-stars {
+  color: #ffc107;
+}
+
+.contact-seller-button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.contact-seller-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* 상품 상세 정보 탭 */
+.product-detail-tabs {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tabs-header {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.tab {
+  flex: 1;
+  padding: 15px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.tab:hover {
+  background-color: #f5f5f5;
+}
+
+.tab.active {
+  color: #2196f3;
+  border-bottom: 3px solid #2196f3;
+}
+
+.tab-content {
+  padding: 30px;
+}
+
+.tab-pane {
+  display: block;
+}
+
+/* 상품 설명 탭 */
+.description-content {
+  margin-bottom: 30px;
+}
+
+.description-content pre {
+  font-family: inherit;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.product-categories h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-tag {
+  background-color: #e3f2fd;
+  color: #2196f3;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* 입찰 기록 탭 */
+.bid-history h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.no-bids {
+  color: #666;
+  font-style: italic;
+}
+
+.bid-history-list {
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.bid-history-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 12px 15px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+  color: #333;
+}
+
+.bid-history-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.bid-history-item:last-child {
+  border-bottom: none;
+}
+
+/* 판매자 정보 탭 */
+.seller-info h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.seller-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.seller-profile {
+  display: flex;
+  align-items: flex-start;
+}
+
+.seller-avatar-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.seller-profile-info h4 {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.seller-rating-large {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.seller-rating-large .rating-stars {
+  font-size: 16px;
+  color: #ffc107;
+}
+
+.seller-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.seller-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-seller-button-large, .view-items-button {
+  flex: 1;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.contact-seller-button-large {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+}
+
+.contact-seller-button-large:hover {
+  background-color: #1976d2;
+}
+
+.view-items-button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.view-items-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* 배송/반품 정보 탭 */
+.shipping-info h3, .shipping-options h4, .return-policy h4 {
+  margin-bottom: 15px;
+}
+
+.shipping-options {
+  margin-bottom: 25px;
+}
+
+.shipping-options-list {
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.shipping-option {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.shipping-option:last-child {
+  border-bottom: none;
+}
+
+.shipping-method {
+  display: flex;
+  align-items: center;
+}
+
+.location-info {
+  margin-left: 5px;
+  color: #666;
+}
+
+.shipping-price {
+  font-weight: 500;
+}
+
+.delivery-estimate {
+  color: #666;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.return-policy p {
+  line-height: 1.6;
+}
+
+/* 모달 스타일 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.confirm-bid-amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2196f3;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.confirm-notice {
+  background-color: #fff8e1;
+  border-left: 4px solid #ffc107;
+  padding: 10px 15px;
+  margin: 15px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.modal-footer {
+  display: flex;
+  padding: 15px 20px;
+  border-top: 1px solid #eee;
+  gap: 10px;
+}
+
+.cancel-button, .confirm-button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+.confirm-button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+}
+
+.confirm-button:hover {
+  background-color: #1976d2;
+}
+
+/* 로딩 및 에러 스타일 */
+.loading-container, .error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 30px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #2196f3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container h2 {
+  color: #f44336;
+  margin-bottom: 10px;
+}
+
+.error-container p {
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 992px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-image-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs-header {
+    flex-wrap: wrap;
+  }
+  
+  .tab {
+    min-width: 50%;
+  }
+  
+  .bid-history-header, .bid-history-item {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .bid-time {
+    display: none;
+  }
+  
+  .seller-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .seller-avatar-large {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .seller-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-detail-container {
+    padding: 15px;
+  }
+  
+  .main-image-container {
+    height: 300px;
+  }
+  
+  .auction-status {
+    flex-direction: column;
+  }
+  
+  .price-container {
+    margin-bottom: 15px;
+  }
+  
+  .tab-content {
+    padding: 20px;
+  }
+  
+  .seller-stats {
+    grid-template-columns: 1fr;
+  }
+}

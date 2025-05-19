@@ -1,0 +1,402 @@
+/* src/components/Header.css */
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 로고 */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #2196f3;
+  margin-right: 20px;
+}
+
+.logo-image {
+  height: 32px;
+  margin-right: 8px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* 검색창 */
+.search-form {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+  margin: 0 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+  outline: none;
+}
+
+.search-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  color: #2196f3;
+}
+
+/* 사용자 메뉴 */
+.user-menu {
+  display: flex;
+  align-items: center;
+}
+
+.notification-container {
+  position: relative;
+  margin-right: 15px;
+}
+
+.notification-button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f44336;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: 100%;
+  right: -10px;
+  width: 300px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.notification-header {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px;
+  margin: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  display: flex;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f5f5f5;
+  transition: background-color 0.2s;
+}
+
+.notification-item:hover {
+  background-color: #f9f9f9;
+}
+
+.notification-item.unread {
+  background-color: #e3f2fd;
+}
+
+.notification-item.unread:hover {
+  background-color: #bbdefb;
+}
+
+.notification-icon {
+  margin-right: 10px;
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-text {
+  margin: 0 0 5px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.notification-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.view-all-notifications {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.view-all-notifications:hover {
+  background-color: #e0e0e0;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  margin-right: 15px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+.user-name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #f44336;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 12px;
+  margin-right: 15px;
+}
+
+.sell-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.sell-button:hover {
+  background-color: #388e3c;
+}
+
+.auth-button {
+  padding: 8px 15px;
+  margin-left: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.auth-button.login {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.auth-button.login:hover {
+  background-color: #e0e0e0;
+}
+
+.auth-button.register {
+  background-color: #2196f3;
+  color: white;
+}
+
+.auth-button.register:hover {
+  background-color: #1976d2;
+}
+
+/* 모바일 메뉴 */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-menu {
+  display: none;
+  padding: 15px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.mobile-search {
+  margin-bottom: 15px;
+}
+
+.mobile-search form {
+  display: flex;
+}
+
+.mobile-search input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+.mobile-search button {
+  padding: 10px 15px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px;
+}
+
+.mobile-nav-list li {
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav-list li a {
+  display: block;
+  padding: 12px 0;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.mobile-user-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  padding: 12px 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.mobile-menu-item svg {
+  margin-right: 8px;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+  .search-form {
+    max-width: 400px;
+  }
+  
+  .user-name {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 10px 15px;
+  }
+  
+  .search-form {
+    display: none;
+  }
+  
+  .user-menu .notification-container,
+  .user-menu .user-profile,
+  .user-menu .logout-button {
+    display: none;
+  }
+  
+  .user-menu .auth-button {
+    display: none;
+  }
+  
+  .user-menu .sell-button {
+    margin-right: 15px;
+  }
+  
+  .mobile-menu-button {
+    display: block;
+  }
+  
+  .mobile-menu.active {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
